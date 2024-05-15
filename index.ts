@@ -8,12 +8,10 @@
 
 
 /*
- * This function calculates the palindrome depth of a number
+ * This function calculates palindrome depth
  */
-function PalindromeDepth(integer: number, currentDepth: number): number {
-  // reverse the integer
+function PalindromeDepth(integer: number, currentDepth: number = 0): number {
   const reversedInteger: number = integer.toString().split('').reverse().join('')
-  // check if integer is a palindrome
   if (integer == reversedInteger) {
     return currentDepth
   } else {
@@ -21,14 +19,14 @@ function PalindromeDepth(integer: number, currentDepth: number): number {
     return PalindromeDepth(sum, currentDepth + 1)
   }
 }
-  
-  
-const startInt: number = 10
-const finishInt: number = 99
-  
-for (let counter = startInt; counter <= finishInt; counter++) {
-  let intDepth: number = PalindromeDepth(counter, 0)
-  console.log(`${counter} is a depth ${intDepth} palindrome.`)
+
+
+const start: number = 10
+const end: number = 99
+
+for (let i = start; i <= end; i++) {
+  let intDepth: number = PalindromeDepth(i)
+  console.log(`${i} has depth ${intDepth}`)
 }
   
 console.log("\nDone.")

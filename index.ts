@@ -20,7 +20,9 @@ function PalindromeDepth(integer: number, currentDepth: number = 0): number {
   }
 }
 
-
+/*
+ * Check all 2 digit numbers
+ */
 const start: number = 10
 const end: number = 99
 

@@ -20,7 +20,7 @@ public class PalindromeDepth {
     /**
      * This function calculates palindrome depth
      */
-    public static int palindromeDepth(long integer, int currentDepth = 0) {
+    public static int palindromeDepth(long integer, int currentDepth) {
         String integerStr = String.valueOf(integer);
         String reversedIntegerStr = new StringBuilder(integerStr).reverse().toString();
         long reversedInteger = Long.parseLong(reversedIntegerStr);
@@ -37,7 +37,7 @@ public class PalindromeDepth {
         int end = 99;
 
         for (int i = start; i <= end; i++) {
-            int intDepth = palindromeDepth(i);
+            int intDepth = palindromeDepth(i, 0);
             System.out.println(i + " has depth " + intDepth);
         }
 
